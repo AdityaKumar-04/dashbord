@@ -5,7 +5,6 @@ import {
   ChevronLeft,
   ChevronRight,
   LayoutDashboard,
-  MoveRight,
   Settings,
   ShoppingCart,
   User,
@@ -13,9 +12,7 @@ import {
 import { Button } from './ui/button'
 import { useWindowWidth } from '@react-hook/window-size'
 
-type Props = {}
-
-export default function Sidebar({ }: Props) {
+export default function Sidebar() {
 
   const [isCollapsed, setisCollapsed] = useState(false)
   const onlyWidth = useWindowWidth();

@@ -1,10 +1,4 @@
-import Image from "next/image";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+
 import Pagetitle from "@/components/Pagetitle";
 import Card, { CardContent, CardProps } from "@/components/Card";
 import { Activity, CreditCard, DollarSign, Users } from "lucide-react";

@@ -1,52 +1,38 @@
-'use client'
+'use client';
 
 import Pagetitle from '@/components/Pagetitle';
 import { DataTable } from '@/components/ui/Datatable';
-import { ColumnDef, createRow, getPaginationRowModel, } from '@tanstack/react-table';
-import { Button } from "@/components/ui/button"
+import { ColumnDef } from '@tanstack/react-table';
 import * as React from 'react';
-import { cn } from '@/lib/utils';
 
-type Props = {}
-
-export default function Orderpage({ }: Props) {
-  return (
-    <div>
-      <Pagetitle title='Settings' className='pb-5' />
-      <DataTable columns={columns} data={Data} />
-
-    </div >
-  );
-}
-
+// Define the Payment type
 type Payment = {
-  setting:string
-  value:string
-}
+  setting: string;
+  value: string;
+};
 
-export const Data: Payment[] = [
+// Sample data
+const Data: Payment[] = [
   {
-    setting:"Accounts",
-    value:"Active"
+    setting: "Accounts",
+    value: "Active"
   },
   {
-    setting:"Notifications",
-    value:"True"
+    setting: "Notifications",
+    value: "True"
   },
   {
-    setting:"Language",
-    value:"English"
+    setting: "Language",
+    value: "English"
   },
   {
-    setting:"Theme",
-    value:"Dark"
+    setting: "Theme",
+    value: "Dark"
   },
-  
+];
 
-]
-
-
-export const columns: ColumnDef<Payment>[] = [
+// Define the columns for the DataTable
+ const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "setting",
     header: "Category",
@@ -55,4 +41,14 @@ export const columns: ColumnDef<Payment>[] = [
     accessorKey: "value",
     header: "Value",
   },
-]
+];
+
+// Main component for the Order page
+export default function Orderpage() {
+  return (
+    <div>
+      <Pagetitle title='Settings' className='pb-5' />
+      <DataTable columns={columns} data={Data} />
+    </div>
+  );
+}

@@ -6,17 +6,6 @@ import { ColumnDef } from '@tanstack/react-table';
 
 import * as React from 'react';
 
-type Props = {}
-
-export default function Userpage({ }: Props) {
-  return (
-    <div>
-      <Pagetitle title='Users' className='pb-5' />
-      <DataTable columns={columns} data={Data} />
-
-    </div >
-  );
-}
 
 type Payment = {
   name: string
@@ -25,7 +14,7 @@ type Payment = {
   method: string
 }
 
-export const Data: Payment[] = [
+const Data: Payment[] = [
   {
     name: "John Doe",
     email: "john@example.com",
@@ -158,7 +147,7 @@ export const Data: Payment[] = [
 ]
 
 
-export const columns: ColumnDef<Payment>[] = [
+const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "name",
     header: "name",
@@ -185,3 +174,13 @@ export const columns: ColumnDef<Payment>[] = [
     header: "Method",
   },
 ]
+
+export default function Userpage() {
+  return (
+    <div>
+      <Pagetitle title='Users' className='pb-5' />
+      <DataTable columns={columns} data={Data} />
+
+    </div >
+  );
+}

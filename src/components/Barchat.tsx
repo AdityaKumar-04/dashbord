@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
-type props = {}
+
 const data = [
   
     {"name": "Jan", "total": 5180},
@@ -20,7 +20,7 @@ const data = [
   
 ]
 
-export default function Barchat({}:props) {
+export default function Barchat() {
   return (
     <ResponsiveContainer width={"100%"} height={320}>
         <BarChart data={data}>

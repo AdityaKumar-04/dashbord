@@ -2,22 +2,11 @@
 
 import Pagetitle from '@/components/Pagetitle';
 import { DataTable } from '@/components/ui/Datatable';
-import { ColumnDef, createRow, getPaginationRowModel, } from '@tanstack/react-table';
-import { Button } from "@/components/ui/button"
+import { ColumnDef } from '@tanstack/react-table';
+
 import * as React from 'react';
 import { cn } from '@/lib/utils';
 
-type Props = {}
-
-export default function Orderpage({ }: Props) {
-  return (
-    <div>
-      <Pagetitle title='Order' className='pb-5' />
-      <DataTable columns={columns} data={Data} />
-
-    </div >
-  );
-}
 
 type Payment = {
   order: string
@@ -26,7 +15,7 @@ type Payment = {
   method: string
 }
 
-export const Data: Payment[] = [
+const Data: Payment[] = [
   {
     order: "ORD001",
     status: "pending",
@@ -153,7 +142,7 @@ export const Data: Payment[] = [
 ]
 
 
-export const columns: ColumnDef<Payment>[] = [
+const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "order",
     header: "Order",
@@ -186,3 +175,14 @@ export const columns: ColumnDef<Payment>[] = [
     header: "Method",
   },
 ]
+
+
+export default function Orderpage() {
+  return (
+    <div>
+      <Pagetitle title='Order' className='pb-5' />
+      <DataTable columns={columns} data={Data} />
+
+    </div >
+  );
+}
