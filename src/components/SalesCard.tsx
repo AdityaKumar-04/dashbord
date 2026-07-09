@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { listItemVariant } from '@/lib/animations';
+import Image from 'next/image';
 
 export type Salesprops = {
   name: string;
@@ -18,7 +19,7 @@ export default function SalesCard(props: Salesprops) {
       <section className='flex justify-between gap-4 items-center'>
         <div className="h-12 w-12 rounded-full bg-gradient-to-tr from-blue-500/20 to-cyan-400/20 p-[2px] shadow-inner">
           <div className="h-full w-full rounded-full overflow-hidden bg-[#0a1120]">
-            <img src={`https://api.dicebear.com/9.x/lorelei/svg?seed=${props.name}`} alt="avatar" width={200} height={200} />
+            <Image src={`https://api.dicebear.com/9.x/lorelei/svg?seed=${props.name}`} alt="avatar" width={200} height={200} />
           </div>
         </div>
         <div className="text-sm">
